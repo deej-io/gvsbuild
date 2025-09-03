@@ -37,6 +37,7 @@ from gvsbuild.projects.gstreamer import (
     GstPluginsBase,
     GstPluginsGood,
     GstPluginsUgly,
+    GstPluginsRs,
     GstPython,
     GstRtspServer,
     Orc,

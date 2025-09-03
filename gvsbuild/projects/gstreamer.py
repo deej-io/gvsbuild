@@ -208,6 +208,22 @@ class GstPluginsUgly(Tarball, Meson):
         Meson.build(self)
         self.install(r".\COPYING share\doc\gst-plugins-ugly")
 
+@project_add
+class GstPluginsRs(Tarball, Meson):
+    def __init__(self):
+        Project.__init__(
+            self,
+            "gst-plugins-rs",
+            repository="https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs",
+            version="0.14.1",
+            archive_url="https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/{version}/gst-plugins-rs-{version}.tar.gz",
+            hash="8f4b332c29f2af88e249c96885d9d72db22693ad6fa0f9729fb1839c21f2802a",
+            dependencies=["meson", "cargo", "gst-plugins-base", "gst-plugins-bad"],
+        )
+
+    def build(self):
+        Meson.build(self)
+        self.install(r".\COPYING share\doc\gst-plugins-ugly")
 
 @project_add
 class GstDevTools(Tarball, Meson):
